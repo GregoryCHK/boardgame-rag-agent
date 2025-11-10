@@ -46,6 +46,19 @@ class VectorStoreManager:
         except Exception as e:
             print(f"Error deleting collection for {game_name} : {e}")
 
+    def list_collections(self) -> List[str]:
+        """
+        List all existing game collections.
+
+        Returns:
+            List of game names with collections
+        """
+        try:
+            collections = self.client.list_collections()
+            return [col.name for col in collections]
+        except Exception as e:
+            return []
+
     def create_vectorstore(self, game_name:str, documents: List[Document], force_rebuild: bool = False) -> Chroma:
         """
         Create the vector store
@@ -112,6 +125,17 @@ class VectorStoreManager:
         print(f"Vector store loaded with {collection_count} documents")
         return vectorstore
 
+    def load_all_vectorstores(self):
+        """
+        Load all existing game collections into memory.
+        """
+        collections = self.list_collections()
+        print(f"Loading all vector stores for {len(collections)} collections: {collections}")
+
+        for game_name in collections:
+            if game_name not in self.vectorstore:
+                self.load_vectorstore(game_name)
+
     def add_documents(self, game_name:str, documents: List[Document]) -> None:
         """
             Add documents to existing collection
@@ -150,3 +174,24 @@ class VectorStoreManager:
         results = self.vectorstore[game_name].similarity_search_with_score(query, k)
 
         return results
+
+    def search_all_games(self, query: str, k: int = 3) ->  Dict[str, List[Tuple]]:
+        """
+        Search across all game collections.
+
+        Args:
+            query: Query string
+            k: Number of results per game
+
+        Returns:
+            Dictionary mapping game names to their search results
+        """
+        self.load_all_vectorstores()
+
+        all_results = {}
+        for game_name in self.vectorstore.keys():
+            result = self.similarity_search(game_name, query, k)
+            if result:
+                all_results[game_name] = result
+
+        return all_results
