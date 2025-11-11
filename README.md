@@ -82,3 +82,18 @@ models to generate accurate answers while citing source material.
 git clone https://github.com/GregoryCHK/boardgame-rag-agent.git
 cd boardgame-rag-agent
 ```
+
+Install dependencies:
+
+``` bash
+uv sync
+```
+
+Make sure to add your OPENAI API KEY in your .env file
+
+## Usage
+
+### 1. Run main.py 
+- Processes your txt files (if new added, else will process the existing files)
+- Creates vector store if not already exists
+- Starts API server
