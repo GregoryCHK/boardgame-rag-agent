@@ -37,12 +37,12 @@ models to generate accurate answers while citing source material.
 
 ### Key Skills Demonstrated
 
--   ✅ RAG Architecture\
--   ✅ Vector Databases\
--   ✅ API Design\
--   ✅ LLM Integration\
--   ✅ Document Processing\
--   ✅ Async Programming\
+-   ✅ RAG Architecture
+-   ✅ Vector Databases
+-   ✅ API Design
+-   ✅ LLM Integration
+-   ✅ Document Processing
+-   ✅ Async Programming
 -   ✅ Modular Software Architecture
 
 ## 📁 Project Structure
@@ -67,3 +67,18 @@ models to generate accurate answers while citing source material.
     ├── .gitignore
     ├── .env
     └── README.md
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+-   Python 3.10+
+-   OpenAI API Key
+-   UV
+
+### Installation
+
+``` bash
+git clone https://github.com/GregoryCHK/boardgame-rag-agent.git
+cd boardgame-rag-agent
+```
