@@ -89,7 +89,7 @@ Install dependencies:
 uv sync
 ```
 
-Make sure to add your OPENAI API KEY in your .env file
+💡 Make sure to add your OPENAI API KEY in your .env file
 
 ## Usage
 
@@ -97,3 +97,4 @@ Make sure to add your OPENAI API KEY in your .env file
 - Processes your txt files (if new added, else will process the existing files)
 - Creates vector store if not already exists
 - Starts API server
+
