@@ -16,11 +16,11 @@ models to generate accurate answers while citing source material.
 
 ### Key Features
 
--   📚 Multi-game support with isolated vector collections\
--   🔍 Semantic search with relevance scoring\
--   🤖 LLM-powered natural language responses\
--   🚀 Production-ready REST API (FastAPI)\
--   📊 Source citation and transparency\
+-   📚 Multi-game support with isolated vector collections
+-   🔍 Semantic search with relevance scoring
+-   🤖 LLM-powered natural language responses
+-   🚀 Production-ready REST API (FastAPI)
+-   📊 Source citation and transparency
 -   💾 Persistent vector storage with ChromaDB
 
 ## 🛠️ Technical Stack
@@ -111,5 +111,6 @@ python main.py --force-recreate       # Rebuild all collections
 python main.py --port 5000            # Use custom port
 python main.py --no-interactive       # No prompts (for automation)
 ```
+
 
 
