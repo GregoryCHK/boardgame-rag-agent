@@ -91,10 +91,25 @@ uv sync
 
 💡 Make sure to add your OPENAI API KEY in your .env file
 
-## Usage
+### Run (One Command)
+```bash
+# Setup and run everything
+uv run python main.py
+```
 
-### 1. Run main.py 
-- Processes your txt files (if new added, else will process the existing files)
-- Creates vector store if not already exists
-- Starts API server
+This will:
+1. ✓ Check your environment setup
+2. ✓ Process game rulebooks (if new or missing)
+3. ✓ Create/update vector store
+4. ✓ Start the API server
+
+### Command Line Options
+```bash
+python main.py --help                 # Show all options
+python main.py --skip-processing      # Skip processing, just start API
+python main.py --force-recreate       # Rebuild all collections
+python main.py --port 5000            # Use custom port
+python main.py --no-interactive       # No prompts (for automation)
+```
+
 
